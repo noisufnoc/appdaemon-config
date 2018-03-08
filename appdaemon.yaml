@@ -1,0 +1,12 @@
+log:
+  logfile: STDOUT
+  errorfile: STDERR
+appdaemon:
+  threads: 10
+  plugins:
+    HASS:
+      type: hass
+      ha_url: http://docker.noisufnoc.net:8123
+      ha_key: !secret ha_key
+hadashboard:
+  dash_url: http://hadashboard.noisufnoc.net

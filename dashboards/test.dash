@@ -1,0 +1,60 @@
+#
+# Main arguments, all optional
+#
+title: Test Panel
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 8
+
+clock:
+    widget_type: clock
+
+weather:
+  widget_type: weather
+  unit: "&deg;F"
+#
+label:
+  widget_type: label
+  title: label
+  title2: label 2
+  text: Hello World
+#
+light:
+  widget_type: light
+  title: FamilyRoom
+  title2: Light
+  entity: light.family_room_lamp
+
+mike_presence:
+  widget_type: device_tracker
+  title: Mike
+  device: mike_clark
+  icon_on: fa-male
+  icon_style_active: "color: #4bcdea"
+  #icon_style_inactive: "color: red"
+  #widget_style: "background: white"
+  #state_text_style: "color:green"
+  #title_style: "color: red"
+
+temperature:
+   widget_type: sensor
+   title: Temperature
+   title2: Sensor
+   units: "F"
+   precision: 1
+   entity: sensor.multisensor_temp
+
+humidity:
+  widget_type: sensor
+  title: Humidity
+  title2: Sensor
+  units: "%"
+  precision: 0
+  entity: sensor.multisensor_humidity
+
+layout:
+  - label(3x1), temperature
+  - humidity, mike_presence
+  - clock.clock(2x2), weather(2x2), light
+  - spacer(8x1)
+  #- include: bottom_panel
