@@ -1,0 +1,107 @@
+title: Home 
+widget_dimensions: [120, 116]
+widget_margins: [4, 3]
+columns: 8
+
+layout:
+ - bathroom, bathroom_fan, forecast.forecast(3x4), weatherimg(3x2)
+ - bathroomoh, bedroom
+ - entry, kitchen, weather.weather(2x1), sunriseset 
+ - accent, shades, hrforecast.hrforecast(3x2)
+ - clock, reload, door.door(3x1)
+
+bathroom:
+  widget_type: switch
+  entity: switch.bathroom_light
+  title: Bathroom
+  icon_on: mdi-lightbulb
+  icon_off: mdi-lightbulb
+  icon_style_active: "color: yellow; transition: 2s"
+  icon_style_inactive: "transition: 2s"
+
+bathroom_fan:
+  widget_type: switch
+  entity: switch.bathroom_fan 
+  title: Bathroom Fan
+  icon_on: mdi-fan 
+  icon_off: mdi-fan 
+  icon_style_active: "transition: 10s; transform: rotate(-1800deg)"
+
+weatherimg:
+  widget_type: iframe
+  refresh: 20 
+  img_list:
+    - https://icons.wxug.com/data/weather-maps/radar/united-states/tacoma-washington-region-current-radar-animation.gif 
+    - http://cdn.tegna-media.com/king/weather/K5-60mileAnim-320x240.gif 
+    - http://cdn.tegna-media.com/king/weather/queenanne.jpg 
+    - http://wwc.instacam.com/instacamimg/SALTY/SALTY_l.jpg
+
+bathroomoh: 
+  widget_type: switch
+  entity: switch.bathroom_overhead_light 
+  title: Bathroom Overhead 
+  icon_on: mdi-lightbulb 
+  icon_off: mdi-lightbulb 
+  icon_style_active: "color: yellow; transition: 2s" 
+  icon_style_inactive: "transition: 2s"
+
+bedroom: 
+  widget_type: switch 
+  entity: light.bedroom_light 
+  title: Bedroom 
+  icon_on: mdi-lightbulb 
+  icon_off: mdi-lightbulb 
+  icon_style_active: "color: yellow; transition: 2s" 
+  icon_style_inactive: "transition: 2s"
+
+entry: 
+  widget_type: switch 
+  entity: light.entry_light 
+  title: Entry 
+  icon_on: mdi-lightbulb 
+  icon_off: mdi-lightbulb 
+  icon_style_active: "color: yellow; transition: 2s" 
+  icon_style_inactive: "transition: 2s" 
+
+kitchen: 
+  widget_type: switch 
+  entity: light.kitchen_light_2 
+  title: Kitchen 
+  icon_on: mdi-lightbulb 
+  icon_off: mdi-lightbulb 
+  icon_style_active: "color: yellow; 
+  transition: 2s" 
+  icon_style_inactive: "transition: 2s"
+
+sunriseset: 
+  widget_type: sensor 
+  entity: sensor.sunrise_sunset 
+  text_style: "font-size: 18px; color: #2eafdd"
+
+accent: 
+  widget_type: switch 
+  entity: light.ac_duct 
+  title: Accent Lights 
+  icon_on: mdi-lightbulb 
+  icon_off: mdi-lightbulb 
+  icon_style_active: "color: yellow; transition: 2s" 
+  icon_style_inactive: "transition: 2s"
+
+shades: 
+  widget_type: switch 
+  title: Shades 
+  entity: switch.all_shades 
+  icon_on: mdi-blinds 
+  icon_off: mdi-blinds 
+  icon_style_active: "color: #42c5f4; 
+  transition: 2s" 
+  icon_style_inactive: "transition: 2s"
+
+clock: 
+  widget_type: clock 
+  time_style: "color: white" 
+  date_style: "hidden: true"
+
+reload: 
+  widget_type: reload 
+  title: "Reload Data"

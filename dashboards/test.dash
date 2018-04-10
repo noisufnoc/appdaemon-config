@@ -21,20 +21,25 @@ label:
 #
 light:
   widget_type: light
-  title: FamilyRoom
+  title: Office
   title2: Light
-  entity: light.family_room_lamp
+  entity: light.office_lamp
 
 mike_presence:
   widget_type: device_tracker
   title: Mike
-  device: mike_clark
+  device: mike_taimen
   icon_on: fa-male
   icon_style_active: "color: #4bcdea"
-  #icon_style_inactive: "color: red"
-  #widget_style: "background: white"
-  #state_text_style: "color:green"
-  #title_style: "color: red"
+  icon_style_inactive: "color: red"
+
+ashley_presence:
+  widget_type: device_tracker
+  title: Ashley
+  device: ashley_pixel
+  icon_on: fa-female
+  icon_style_active: "color: #4bcdea"
+  icon_style_inactive: "color: red"
 
 temperature:
    widget_type: sensor
@@ -54,7 +59,7 @@ humidity:
 
 layout:
   - label(3x1), temperature
-  - humidity, mike_presence
+  - humidity, mike_presence, ashley_presence
   - clock.clock(2x2), weather(2x2), light
   - spacer(8x1)
-  #- include: bottom_panel
+  - include: dock
