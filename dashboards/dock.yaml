@@ -38,8 +38,9 @@ reload:
   title: "Reload Data"
 
 back:
-  widget_type: back
+  widget_type: javascript
   title: "Back"
+  command: "window.history.back()"
 
 layout:
   - load_main_panel, load_status, load_advanced, reload, clock, back, alarm
