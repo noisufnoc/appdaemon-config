@@ -3,7 +3,7 @@ load_main_panel:
   title: Main Panel
   icon_active: fa-home
   icon_inactive: fa-home
-  url: /Hello
+  url: /Main
   icon_style: "background-color: orange !important"
 
 load_status:
